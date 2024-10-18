@@ -4,10 +4,13 @@ import Home from './Home';
 import Camera from './Camera';
 import Settings from './Settings';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTheme } from './ThemeContext'; // Importiere den ThemeContext
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavBar = () => {
+  const { theme } = useTheme(); // Hole das aktuelle Thema
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -26,8 +29,8 @@ const BottomNavBar = () => {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: 'black',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: theme === 'dark' ? '#fff' : 'black', // Active tint color based on theme
+        tabBarInactiveTintColor: theme === 'dark' ? '#bbb' : 'gray', // Inactive tint color based on theme
         tabBarStyle: {
           height: 70, // Adjust height of the tab bar
           borderTopLeftRadius: 50, // Round top left corner
@@ -39,13 +42,13 @@ const BottomNavBar = () => {
           paddingHorizontal: 20, // Add horizontal padding
           marginLeft: 20,
           marginRight: 20,
-          marginBottom: 10,
+          marginBottom: 20,
+          backgroundColor: theme === 'dark' ? '#202225' : '#fff', // Background color based on theme
         },
         tabBarLabelStyle: {
           fontSize: 14, // Optionally adjust label font size
           marginTop: -10, // Move the label closer to the icon
           paddingBottom: 10, // Add padding if needed
-
         },
       })}
     >

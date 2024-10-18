@@ -1,11 +1,16 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavBar from './BottomNavBar';
+import { ThemeProvider } from './ThemeContext';
 
-export default function App() {
+const App = () => {
   return (
-    <NavigationContainer>
-      <BottomNavBar />
-    </NavigationContainer>
+    <ThemeProvider>
+      <NavigationContainer>
+        <BottomNavBar />
+      </NavigationContainer>
+    </ThemeProvider>
   );
-}
+};
+
+export default App;
