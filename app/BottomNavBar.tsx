@@ -12,7 +12,7 @@ const BottomNavBar = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
-          let iconName: string; // Setze den Typ auf string
+          let iconName: string;
 
           if (route.name === 'Camera') {
             iconName = 'camera';
@@ -28,6 +28,25 @@ const BottomNavBar = () => {
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'gray',
+        tabBarStyle: {
+          height: 70, // Adjust height of the tab bar
+          borderTopLeftRadius: 50, // Round top left corner
+          borderTopRightRadius: 50, // Round top right corner
+          borderBottomLeftRadius: 50, // Round bottom left corner
+          borderBottomRightRadius: 50, // Round bottom right corner
+          overflow: 'hidden', // Prevents content from overflowing
+          position: 'absolute', // Ensures it stays on top
+          paddingHorizontal: 20, // Add horizontal padding
+          marginLeft: 20,
+          marginRight: 20,
+          marginBottom: 10,
+        },
+        tabBarLabelStyle: {
+          fontSize: 14, // Optionally adjust label font size
+          marginTop: -10, // Move the label closer to the icon
+          paddingBottom: 10, // Add padding if needed
+
+        },
       })}
     >
       <Tab.Screen name="Camera" component={Camera} />
