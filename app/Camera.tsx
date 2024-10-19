@@ -3,14 +3,12 @@ import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { useTheme } from './ThemeContext'; // Importiere den ThemeContext
 import ThemeStyles from './ThemeStyles'; // Importiere die Themenstile
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
-import * as MediaLibrary from 'expo-media-library';
 
 const CameraScreen: React.FC = () => {
   const { theme } = useTheme();
   const styles = ThemeStyles(theme);
 
   const [permission, requestPermission] = useCameraPermissions();
-  const [image, setImage] = useState(null);
   const [type, setType] = useState<CameraType>("back");
 
   if (!permission) {
