@@ -6,7 +6,7 @@ const ThemeStyles = (theme: 'light' | 'dark') => {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: theme === 'dark' ? '#2e343b' : '#fff', // Change this hex code for dark mode
+      backgroundColor: theme === 'dark' ? '#2e343b' : '#fff',
     },
     text: {
       fontSize: 18,
