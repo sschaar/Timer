@@ -21,6 +21,27 @@ const ThemeStyles = (theme: 'light' | 'dark') => {
       marginLeft: 20,
       transform: [{ scale: 1.5 }],
     },
+    camera: {
+      flex: 1,
+    },
+    cameraContainer: {
+      flex: 1,
+    },
+    button: {
+      position: 'absolute',
+      bottom: 120,
+      right: 40,
+      width: 70,
+      height: 70,
+      backgroundColor: '#0088FF',
+      borderRadius: 40,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    buttonText: {
+      fontSize: 18,
+      fontWeight: 'bold'
+    }
   });
 };
 

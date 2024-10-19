@@ -33,8 +33,12 @@ const CameraScreen: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Camera Screen</Text>
+    <View style={styles.cameraContainer}>
+      <CameraView style={styles.camera} facing={type}>
+          <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
+            <Text style={styles.buttonText}>Flip</Text>
+          </TouchableOpacity>
+      </CameraView>
     </View>
   );
 };
